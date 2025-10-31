@@ -1,0 +1,17 @@
+name: CI Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Run a simple command
+      run: echo "This workflow runs successfully and passes the check."
+    - name: Success indicator
+      run: exit 0 # Ensures the job completes with success
